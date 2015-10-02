@@ -1,0 +1,68 @@
+<template name="imageListBlocksIt">
+    <div id="photos-container" class="blocks-it-photos-holder">
+    {{#each images}}
+        {{> imageItemBlocksit }}
+    {{/each}}
+<!--        <div class="grid">
+            <div class="imgholder">
+                <img src="images/img27.jpg"/>
+            </div>
+            <strong>Sunset Lake</strong>
+
+            <p>A peaceful sunset view...</p>
+
+            <div class="meta">by j osborn</div>
+        </div>
+        <div class="grid">
+            <div class="imgholder">
+                <img src="images/img26.jpg"/>
+            </div>
+            <strong>Bridge to Heaven</strong>
+
+            <p>Where is the bridge lead to?</p>
+
+            <div class="meta">by SigitEko</div>
+        </div>
+        <div class="grid">
+            <div class="imgholder">
+                <img src="images/img15.jpg"/>
+            </div>
+            <strong>Autumn</strong>
+
+            <p>The fall of the tree...</p>
+
+            <div class="meta">by Lars van de Goor</div>
+        </div>-->
+    </div>
+
+</template>
+<template name="imageItemBlocksit">
+    <div class="block grid">
+        <div class="imgholder">
+            <a rel="lightbox"  data-lightbox="gallery" href="{{ path }}/{{ name }}"><img src="{{ path }}/{{ name }}" alt="{{ name }}" data-title="{{name}}" style="width: 100%" /></a>
+        </div>
+        <strong style="font-size: 14px;">{{ caption }}</strong>
+
+        <!--<p>{{ name }}</p>-->
+    {{#if currentUserIsAdmin}}
+
+        <div class="controls-holder">
+            <!--<a class="like">like</a>-->
+            <a class="remove">remove</a>
+            <!--<a class="edit">edit</a>-->
+        </div>
+    {{/if}}
+    </div>
+</template>
+<!--fancybox-style-->
+<!--
+<template name="imageItemBlocksit">
+    <div class="block grid">
+        <div class="imgholder">
+            <img src="{{ path }}/{{ name }}" alt="{{ name }}" class="fancybox"  data-title="{{name}}" style="width: 100%" rel="lightbox"/>
+        </div>
+        <strong style="font-size: 14px;">{{ caption }}</strong>
+
+        &lt;!&ndash;<p>{{ name }}</p>&ndash;&gt;
+    </div>
+</template>-->

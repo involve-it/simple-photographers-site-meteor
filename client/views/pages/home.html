@@ -1,0 +1,18 @@
+<template name="home">
+    <!--<div class="page home-page" style="background-image: url({{homePhoto}})">-->
+    <div class="page home--page">
+        <div class="background-holder" style="background-image: url({{homePhoto}})">
+            <!--<img  src="{{homePhoto}}" />-->
+        </div>
+
+        <!--{{#if currentUserIsAdmin}}
+            <div class="admin-change-background-holder">
+                <a>change</a>
+            </div>
+        {{/if}}-->
+        <div id="gallery"  class="image-list-film">
+            {{>imageListFilm galleryName="Home Gallery"}}
+        </div>
+    </div>
+
+</template>

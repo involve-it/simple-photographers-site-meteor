@@ -1,0 +1,6 @@
+{
+  "name": "node version example",
+  "engines": {
+    "node": "0.10.36"
+  }
+}

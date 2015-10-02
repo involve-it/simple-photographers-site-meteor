@@ -1,0 +1,81 @@
+<template name="imageUploadForm">
+    <style type="text/css">
+        span.js-todo-add {
+            top: -22px !important;
+            position: relative !important;
+        }
+    </style>
+    <form>
+
+        <h6>Add new image</h6>
+
+        <div>
+            <input type="text" class="nameInput" placeholder="Image Name"/>
+            <span class="icon-add js-todo-add"></span>
+        </div>
+        <div>
+
+            <input type="text" class="galleriesInput" placeholder="Included in galleries"/>
+            <span class="icon-add js-todo-add"></span>
+        </div>
+        <div>
+
+            <input type="text" class="timestampInput" placeholder="Time shoot"/>
+            <span class="icon-add js-todo-add"></span>
+        </div>
+        <div>
+
+            <input type="file" class="fileInput"/>
+
+            <span class="icon-add js-todo-add"></span>
+        </div>
+        <div>
+
+
+            <button class="btn-upload">Upload</button>
+        </div>
+        <br/>
+        <br/>
+    </form>
+</template>
+
+<template name="imageUploader">
+    <style type="text/css">
+        span.js-todo-add {
+            top: -22px !important;
+            position: relative !important;
+        }
+    </style>
+    <h6>Add new image</h6>
+
+    <!--<div>
+        <input type="text" class="nameInput" placeholder="Image Name"/>
+        <span class="icon-add js-todo-add"></span>
+    </div>-->
+    <!--<div>
+
+        <input type="text" class="galleriesInput" placeholder="Included in galleries"/>
+        <span class="icon-add js-todo-add"></span>
+    </div>-->
+    <!--<div>
+
+        <input type="text" class="timestampInput" placeholder="Time shoot"/>
+        <span class="icon-add js-todo-add"></span>
+    </div>-->
+    <div>
+
+        <h6>Drag and drop single image on the target area</h6>
+        {{> dropzone contentType='images'  multiple=false formData=formData callbacks=myCallbacks }}
+
+    </div>
+    <!--<div>
+
+
+        <button class="btn-upload">Upload</button>
+    </div>-->
+
+</template>
+<template name="homeImageUploader">
+        <h3>Drag and drop image on the target area</h3>
+        {{> dropzone contentType='images'  multiple=false formData=formData  }}
+</template>

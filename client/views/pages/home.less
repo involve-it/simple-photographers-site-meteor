@@ -1,0 +1,31 @@
+.home--page {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  .background-holder {
+    background-size: cover;
+    img {
+      width: 100%;
+    }
+  }
+  .admin-change-background-holder {
+    position: absolute;
+    right: 0;
+  }
+}
+
+.animatable-grow {
+  -webkit-animation: mymove 3s; /* Chrome, Safari, Opera */
+  animation: mymove 3s;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+  from {background-size: 100% auto;}
+  to {background-size: 110% auto;}
+}
+
+/* Standard syntax */
+@keyframes mymove {
+  from {background-size: 100% auto;}
+  to {background-size: 110% auto;}
+}

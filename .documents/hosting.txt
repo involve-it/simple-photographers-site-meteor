@@ -1,0 +1,54 @@
+METEOR
+Email: arutune@gmail.com
+Deploying to yanaishkova.meteor.com.
+Now serving at http://yanaishkova.meteor.com
+
+You can set a password on your account or change your email address at: https://www.meteor.com/setPassword?mDp8sPmRXd
+
+MODULUS
+
+project direct link:
+http://yana-40274.onmodulus.net/
+
+command line help:
+http://help.modulus.io/customer/portal/articles/1701977-modulus-command-line
+
+using from terminal:
+
+0. install modulus CLI:
+ sudo npm install -g modulus
+1. login:
+ modulus login
+ arutune@gmail.com
+ ga...4
+2. deploy:
+ modulus deploy
+
+
+GODADDY:
+ old A-record:
+   @, 184.168.221.53
+ new A-record:
+   @, 54.236.216.66
+
+
+MONGO :
+user:
+arutune
+ga..4
+
+dbId:
+muVig9ez
+
+Backup:
+mongodump --host localhost:3001
+
+Restore:
+mongorestore -h proximus.modulusmongo.net -u user -p pass --authenticationDatabase dbId --db dbId path/to/dump
+mongorestore -h proximus.modulusmongo.net -u arutune -p gavrila4 --authenticationDatabase muVig9ez --db muVig9ez .dump/meteor
+
+mongo proximus.modulusmongo.net:27017/muVig9ez -u <user> -p <pass>
+
+Settings:
+MONGO_URL: mongodb://involve-it:InvolveMe13@proximus.modulusmongo.net:27017/muVig9ez?autoReconnect=true&connectTimeoutMS=60000  - was
+MONGO_URL: mongodb://arutune:gavrila4@proximus.modulusmongo.net:27017/muVig9ez?autoReconnect=true&connectTimeoutMS=60000        - new

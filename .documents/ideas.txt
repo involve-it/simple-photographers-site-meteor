@@ -1,0 +1,23 @@
+http://www.lab4games.net/zz85/blog/2012/11/19/making-of-boids-and-buildings/
+
+http://mrdoob.com/#/131/clouds
+
+
+exporting models:
+https://github.com/mrdoob/three.js/tree/master/utils/exporters/blender
+http://stackoverflow.com/questions/11243689/prefered-3d-model-format-of-three-js
+http://blog.romanliutikov.com/post/58690562825/external-models-in-three-js
+
+morphing:
+https://github.com/jembezmamy/morpher-js
+
+// gallery skin take here:
+http://tympanus.net/Development/MultiMediaGallery/
+http://tympanus.net/codrops/2010/06/24/multimedia-gallery/
+
+//gallery motions (with famous):
+http://codepen.io/befamous/pen/kbxnH
+
+
+//MOBILE:
+http://stackoverflow.com/questions/23899318/meteor-with-mobile-front-end-ui-framework

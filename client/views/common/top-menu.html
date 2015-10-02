@@ -1,0 +1,50 @@
+<template name="topMenu">
+
+    <section id="menu" class="top-menu-holder">
+        <!--Authentication:-->
+        <div class="top-menu-links">
+            <a href="/" class="{{activeClass}}" title="Home">Home</a>
+            |
+            <a href="/photographs" class=" {{activeClass}}" title="Home">Photographs</a>
+            |
+            <a href="/biography" class=" {{activeClass}}" title="Home">Biography</a>
+            {{#if currentUserIsAdmin}}
+                |
+                <a href="/admin" class=" {{activeHomeClass}}" title="Home">Admin</a>
+            {{/if}}
+        </div>
+    </section>
+</template>
+<template name="topMenuAdmin">
+
+    <section id="menu" class="side-menu-holder">
+        <!--Authentication:-->
+        {{#if currentUser}}
+            <div class="btns-group-vertical">
+                <a href="#" class="js-user-menu btn-secondary">
+                    {{#if userMenuOpen}}
+                        <span class="icon-arrow-up"></span>
+                    {{else}}
+                        <span class="icon-arrow-down"></span>
+                    {{/if}}
+                    {{emailLocalPart}}
+                </a>
+                {{#if userMenuOpen}}
+                    <a class="js-logout btn-secondary">Logout</a>
+                {{/if}}
+            </div>
+        {{else}}
+            {{#if showAuth }}
+                <div class="btns-group">
+                    <a href="{{pathFor 'signin'}}" class="btn-secondary">Sign In</a>
+                    <a href="{{pathFor 'join'}}" class="btn-secondary">Join</a>
+                </div>
+            {{/if}}
+        {{/if}}
+        <div class="top-menu-links">
+            <a href="/" class="list-todo {{activeHomeClass}}" title="Home">Home</a>
+            <a href="/" class="list-todo {{activeHomeClass}}" title="Home">Photographs</a>
+            <a href="/" class="list-todo {{activeHomeClass}}" title="Home">Biography</a>
+        </div>
+    </section>
+</template>

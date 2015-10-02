@@ -1,0 +1,53 @@
+<template name="imageView">
+    <div class="imageView">
+        {{#each images}}
+            <div>
+                <a href="{{this.url}}" target="_blank">
+                    <img src="{{this.url store='thumbs' uploading='/images/uploading.gif' storing='/images/storing.gif'}}"
+                         alt="" class="thumbnail" rel="lightbox"/>
+                </a>
+            </div>
+        {{/each}}
+    </div>
+</template>
+
+
+<!--lightbox-style:-->
+<!-- List for images -->
+<template name="imageListFilm">
+    <div id="scroll-holder" class="scroll-holder">
+        <div class="gallery-images-list-holder" style="">
+        {{#each images}}
+            <div class="gallery-image-wrapper">
+                <a  href="{{ path }}/{{ name }}" alt="{{ name }}" class="thumbnail" rel="lightbox" data-title="{{name}}" data-lightbox="gallery">
+                    <div class="film-frame-holder" ></div>
+                    <div class="film-image-holder" style="background-image: url('{{ path }}/{{ name }}');"></div>
+                    <!--<img src="{{ path }}/{{ name }}" alt="{{ name }}" style="width: 260px;"/>-->
+                    <!--<img src="{{ path }}/{{ name }}" alt="{{ name }}" class="fancybox thumbnail" rel="lightbox" data-title="{{name}}" data-lightbox="gallery"/>-->
+                </a>
+            <!--{{>imageItem}}-->
+            </div>
+        {{/each}}
+        </div>
+    </div>
+</template>
+
+<!-- A single  media list item  -->
+<template name="imageItem">
+    <li class="media">
+        <a class="pull-left open-modal" href="#">
+            <img class="media-object" src="{{cfsFileUrl '64x64'}}" alt="{{_id}}">
+        </a>
+
+        <div class="media-body">
+            <h4 class="media-heading">{{filename}}</h4>
+
+            <p>Uploaded at {{formattedUploadedDate}} </p>
+
+            <p>Size {{formatedSize}}</p>
+
+            <p>Id {{_id}}</p>
+
+        </div>
+    </li>
+</template>

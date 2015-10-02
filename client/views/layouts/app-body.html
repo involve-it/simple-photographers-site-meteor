@@ -1,0 +1,36 @@
+<template name="appBody">
+    <div class="main-wrapper">
+    <div id="main-container" class="{{menuOpen}} {{cordova}} main-container">
+        <img src="/images/spinner.gif" style="display: none;" />
+        {{> topMenu}}
+
+        <!--{{#unless connected}}
+            <div class="notifications">
+                <div class="notification">
+                    loading..
+                    &lt;!&ndash;<span class="icon-sync-img">
+                        <img src="/images/spinner.gif" />
+                    </span>
+                    <div class="meta">
+                        <div class="title-notification">Trying to connect</div>
+                        <div class="description">There seems to be a connection issue</div>
+                    </div>&ndash;&gt;
+                </div>
+            </div>
+        {{/unless}}-->
+
+        <!--<div class="content-overlay"></div>-->
+        <!--{{> language}}-->
+        <h1 class="title-auth site-title">Yana Ishkova</h1>
+
+        <div id="container" class="page-container">
+        <!--<div>-->
+            {{#each thisArray}}
+                {{> yield}}
+            {{/each}}
+        </div>
+        <!--{{> player }}-->
+    </div>
+    </div>
+    <div class="copyright-holder"><h5>Developed by <a href="http://involve-it.com" target="_blank">Involve-IT.com</a></h5></div>
+</template>

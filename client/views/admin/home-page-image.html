@@ -1,0 +1,11 @@
+<template name="homePageImage">
+    <h4>Choose the Image for the home page background:</h4>
+    <!--<h6>Existing image:</h6>-->
+    <h6>Upload new image:</h6>
+    <input type="button" value="Add new photo" name="addNew" class="add-new-photo-btn"/>
+
+    <div class="imgUploadFormHolder" style="display: none;">
+        {{>homeImageUploader }}
+    </div>
+
+</template>

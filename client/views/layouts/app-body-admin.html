@@ -1,0 +1,28 @@
+<template name="appBodyAdmin">
+    <div id="container" class="{{menuOpen}} {{cordova}} container--admin">
+        {{> sideMenuAdmin galleryLists=galleryLists}}
+
+        <img src="/images/spinner.gif" style="display: none;" />
+        {{#unless connected}}
+            <div class="notifications">
+                <div class="notification">
+                    <span class="icon-sync-img">
+                        <img src="/images/spinner.gif" />
+                    </span>
+                    <div class="meta">
+                        <div class="title-notification">Trying to connect</div>
+                        <div class="description">There seems to be a connection issue</div>
+                    </div>
+                </div>
+            </div>
+        {{/unless}}
+
+        <div class="content-overlay"></div>
+
+        <div id="content-container" class="content-container-admin">
+            {{#each thisArray}}
+                {{> yield}}
+            {{/each}}
+        </div>
+    </div>
+</template>

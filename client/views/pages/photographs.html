@@ -1,0 +1,23 @@
+<template name="photographs">
+    <div class="page home--photographs" style="">
+
+        <!--<div class="page-footer">
+            <div id="gallery"  class="image-list-film">
+                {{>imageListFilm galleryName="Home Gallery"}}
+            </div>
+        </div>-->
+        {{#each galleries}}
+            {{> gallery }}
+        {{/each}}
+    </div>
+</template>
+<template name="gallery">
+    <div class="gallery-holder">
+        <h2>{{ name }}</h2>
+        {{> imageListBlocksIt galleryName=name}}
+
+        <br/>
+        <br/>
+        <br/>
+    </div>
+</template>

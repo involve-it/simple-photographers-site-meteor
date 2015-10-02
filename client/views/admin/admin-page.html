@@ -1,0 +1,26 @@
+<template name="admin">
+    <div class="page admin--page">
+    {{#if currentUserIsAdmin}}
+
+        <h3> Choose the gallery to edit in the side menu</h3>
+        <h5>OR</h5>
+
+        <h3>Change home background image:</h3>
+        <br/>
+
+        {{> homePageImage }}
+        <h5>OR</h5>
+
+        <h3>Change Biography Page text:</h3>
+        <br/>
+
+        <textarea class="admin--biography-text-input" placeholder="Put your new text here"></textarea>
+        <br/>
+        <br/>
+
+        <button id="save-biography-text">Save</button>
+    {{else}}
+        <h3> Please log in as administrator.</h3>
+    {{/if}}
+    </div>
+</template>

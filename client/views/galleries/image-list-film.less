@@ -1,0 +1,70 @@
+/*
+.thumbnail {
+  max-width: 260px !important;
+  max-height: 200px !important;
+}*/
+@imageWidth: 200px;
+@imageHeight: 150px;
+@scrollBarOpacity: 0;
+.scroll-holder {
+    position: relative;
+    background-color: black;
+}
+.image-list-film {
+
+    //top:-50px;
+    overflow-y: hidden;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    .gallery-images-list-holder {
+        width:2000px;
+        min-height: @imageHeight + 10;
+
+        .gallery-image-wrapper {
+            display: inline-block;
+            width: @imageWidth;
+            min-width: @imageWidth;
+            min-height: @imageHeight + 10;
+        }
+        a.thumbnail {
+            position: relative;
+            display: inline-block;
+
+            div.film-frame-holder {
+                height: 150px;
+                z-index: 100;
+                width: @imageWidth + 10;
+                background-image: url('/images/movie-film-border-md.png');
+                background-size: @imageWidth auto;
+                background-repeat: no-repeat;
+                position: absolute;
+                display: inline-block;
+            }
+            div.film-image-holder{
+                position: absolute;
+                height: @imageHeight;
+                width: @imageWidth;
+                background-size: cover;
+                background-position: center;
+            }
+            img {
+                max-width: @imageWidth;
+                max-height: @imageWidth;
+
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+    .mCSB_scrollTools.mCSB_scrollTools_horizontal {
+        z-index: 1000;
+    }
+    .mCSB_scrollTools {
+        opacity: @scrollBarOpacity;
+        filter: "alpha(opacity=@scrollBarOpacity)";
+        -ms-filter: "alpha(opacity=@scrollBarOpacity)";
+    }
+}

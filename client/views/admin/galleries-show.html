@@ -1,0 +1,79 @@
+<template name="galleriesShow">
+    <style type="text/css">
+        .imgUploadFormHolder {
+            background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
+            border-bottom: 1px black solid;
+        }
+    </style>
+    <div class="page lists-show">
+        <nav class="js-title-nav">
+            {{#if editing}}
+                <form class="js-edit-form list-edit-form">
+                    <input type="text" name="name" value="{{name}}">
+
+                    <div class="nav-group right">
+                        <a href="#" class="js-cancel nav-item"><span class="icon-close js-cancel" title="Cancel"></span></a>
+                    </div>
+                </form>
+            {{else}}
+                <div class="nav-group">
+                    <a href="#" class="js-menu nav-item"><span class="icon-list-unordered" title="Show menu"></span></a>
+                </div>
+
+                <h1 class="js-edit-list title-page"><span class="title-wrapper">{{name}}</span>
+                    <!--<span class="count-list">{{incompleteCount}}</span>-->
+                </h1>
+
+                <div class="nav-group right">
+                    <div class="nav-item options-mobile">
+                        <select class="list-edit">
+                            <option disabled selected>Select an action</option>
+                            {{#if userId}}
+                                <option value="public">Make Public</option>
+                            {{else}}
+                                <option value="privated">Make Private</option>
+                            {{/if}}
+                            <option value="delete">Delete</option>
+                        </select>
+                        <span class="icon-cog"></span>
+                    </div>
+                    <div class="options-web">
+                        {{#if currentUserId}}
+
+                            <a class="js-toggle-list-privacy nav-item">
+                                {{#if userId}}
+                                    <span class="icon-lock" title="Make list private"></span>
+                                {{else}}
+                                    <span class="icon-unlock" title="Make list public"></span>
+                                {{/if}}
+                            </a>
+                            <a class="js-delete-list nav-item">
+                                <span class="icon-trash" title="Delete list"></span>
+                            </a>
+                        {{/if}}
+
+                    </div>
+                </div>
+            {{/if}}
+
+            <form class="js-todo-new todo-new input-symbol">
+                {{#if canUpload}}
+                    <input type="button" value="Add new photo" name="addNew" class="add-new-photo-btn"/>
+
+                    <div class="imgUploadFormHolder" style="display: none;">
+                        {{> imageUploader galleryId=galleryId }}
+                        <!--{{>imageUploadForm}}-->
+                    </div>
+                {{/if}}
+
+            </form>
+        </nav>
+
+
+        <div class="content-scrollable list-items">
+            <!--{{>imageListFilm galleryId=galleryId}}-->
+            {{> imageListBlocksIt galleryName=name}}
+
+        </div>
+    </div>
+</template>

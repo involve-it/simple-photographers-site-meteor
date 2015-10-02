@@ -1,0 +1,112 @@
+<template name="sideMenu">
+
+    <section id="menu" class="side-menu-holder">
+        <!--Authentication:-->
+      {{#if currentUser}}
+          <div class="btns-group-vertical">
+              <a href="#" class="js-user-menu btn-secondary">
+                {{#if userMenuOpen}}
+                    <span class="icon-arrow-up"></span>
+                {{else}}
+                    <span class="icon-arrow-down"></span>
+                {{/if}}
+                {{emailLocalPart}}
+              </a>
+            {{#if userMenuOpen}}
+                <a class="js-logout btn-secondary">Logout</a>
+            {{/if}}
+          </div>
+      {{else}}
+        {{#if showAuth }}
+          <div class="btns-group">
+              <a href="{{pathFor 'signin'}}" class="btn-secondary">Sign In</a>
+              <a href="{{pathFor 'join'}}" class="btn-secondary">Join</a>
+          </div>
+        {{/if}}
+      {{/if}}
+
+        <div class="list-todos">
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <a href="/" class="list-todo {{activeHomeClass}}" title="Home">Home</a>
+            <a href="/faces?date=Sat%20Apr%2011%202015%2006:35:31%20GMT-0700%20(PDT)" class="list-todo" title="Yana's Faces">Yana's Faces</a>
+            <a href="/recently-added?date=Sat%20Apr%2011%202015%20012:35:31%20GMT-0700%20(PDT)" class="list-todo {{activeHomeClass}}" title="Recently Added">Recently Added</a>
+            {{#if currentUserIsAdmin}}
+              <a href="/admin" class="list-todo" title="Admin">Admin</a>
+            {{/if}}
+            <!--<h5>My Galleries</h5>
+            {{#each galleryLists}}
+                <a href="{{pathFor 'galleriesShow'}}" class="list-todo {{activeListClass}}" title="{{name}}">
+                  {{#if userId}}
+                      <span class="icon-lock"></span>
+                  {{/if}}
+                  {{#if incompleteCount}}
+                      <span class="count-list">{{incompleteCount}}</span>
+                  {{/if}}
+                  {{name}}
+                </a>
+            {{/each}}-->
+        </div>
+    </section>
+</template>
+<template name="sideMenuAdmin">
+
+    <section id="menu" class="side-menu-holder">
+        <!--Authentication:-->
+      {{#if currentUser}}
+          <div class="btns-group-vertical">
+              <a class="js-user-menu btn-secondary">
+                {{#if userMenuOpen}}
+                    <span class="icon-arrow-up"></span>
+                {{else}}
+                    <span class="icon-arrow-down"></span>
+                {{/if}}
+                {{emailLocalPart}}
+              </a>
+            {{#if userMenuOpen}}
+                <a class="js-logout btn-secondary">Logout</a>
+            {{/if}}
+          </div>
+      {{else}}
+        {{#if showAuth }}
+          <div class="btns-group">
+              <a href="{{pathFor 'signin'}}" class="btn-secondary">Sign In</a>
+              <a href="{{pathFor 'join'}}" class="btn-secondary">Join</a>
+          </div>
+        {{/if}}
+      {{/if}}
+
+        <div class="list-todos">
+            <h5>My Pages</h5>
+
+            <a href="/" class="list-todo" title="Home">Home</a>
+            <a href="/photographs" class="list-todo" title="Photographs">Photographs</a>
+            <a href="/biography" class="list-todo" title="Biography">Biography</a>
+            <a href="/admin" class="list-todo {{activeAdminPage}}" title="Admin">Admin</a>
+
+            <h5>My Galleries</h5>
+
+            {{#if currentUserId}}
+                <a class="js-new-gallery link-list-new"><span class="icon-plus"></span>New Gallery</a>
+            {{/if}}
+
+            {{#each galleryLists}}
+                <a href="{{pathFor 'galleriesShow'}}" class="list-todo {{activeListClass}}" title="{{name}}">
+                  {{#if userId}}
+                      <span class="icon-lock"></span>
+                  {{/if}}
+                  {{#if incompleteCount}}
+                      <span class="count-list">{{incompleteCount}}</span>
+                  {{/if}}
+                  {{name}}
+                </a>
+            {{/each}}
+
+        </div>
+    </section>
+<!--    <div class="nav-group">
+        <a href="#" class="js-menu nav-item"><span class="icon-list-unordered" title="Show menu"></span></a>
+    </div>-->
+</template>

@@ -1,0 +1,36 @@
+https://github.com/CollectionFS/Meteor-CollectionFS
+
+https://github.com/mxab/cfs-multi-filehandler-example/blob/master/app.js
+https://github.com/mxab/cfs-multi-filehandler-example/blob/master/app.html
+
+https://github.com/CollectionFS/Meteor-cfs-example-filemanager/blob/master/model.js
+https://github.com/CollectionFS/Meteor-cfs-example-filemanager/blob/master/view.html
+
+https://github.com/steve/simple-d3-with-meteor
+http://stevesanderson.com/2013/06/08/v2-of-simple-d3-with-meteor-now-rendering-individual-records/
+
+https://atmospherejs.com/astraw/jquery-fleximages
+?
+
+upload files:
+https://github.com/Sanjo/collectionFS_test/tree/ejson-file-reference
+
+dragNdrop:
+https://github.com/mxab/cfsfileurl-example
+
+________used in project_________
+
+https://github.com/groupbuddies/meteor-bender
+http://stackoverflow.com/questions/23679204/page-transitions-in-meteor
+
+
+// globalization
+https://atmospherejs.com/txgruppi/simple-i18n
+
+// effects:
+http://reveal-js.meteor.com/
+bender:
+https://github.com/groupbuddies/meteor-bender
+
+music player:
+https://github.com/johndyer/mediaelement
